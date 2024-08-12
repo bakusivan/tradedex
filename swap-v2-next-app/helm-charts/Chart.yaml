@@ -1,0 +1,6 @@
+apiVersion: v2
+name: swap-v2-next-app
+description: A Helm chart for deploying swap-v2-next-app
+type: application
+version: 0.0.1
+appVersion: "0.0.1"
