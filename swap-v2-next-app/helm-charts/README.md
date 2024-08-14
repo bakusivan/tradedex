@@ -29,6 +29,17 @@ kubectl create secret docker-registry ghcr-secret \
 
 ## helm command
 
-helm install swap-v2-next-app ./helm-charts \
-  --set env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=$NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID \
-  --set env.NEXT_PUBLIC_ZEROEX_API_KEY=$NEXT_PUBLIC_ZEROEX_API_KEY
+helm install swap-v2-next-app ./helm-charts
+
+# TODO; test this
+
+## ExternalDNS - godaddy.com example
+
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+helm install external-dns bitnami/external-dns \
+  --set provider=godaddy \
+  --set godaddy.apiKey="YOUR_GODADDY_API_KEY" \
+  --set godaddy.apiSecret="YOUR_GODADDY_API_SECRET" \
+  --set godaddy.domainFilters={yourdomain.com} \
+  --set txtOwnerId="YOUR_CLUSTER_NAME"
