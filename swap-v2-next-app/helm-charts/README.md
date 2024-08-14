@@ -15,6 +15,8 @@ aws eks --region eu-north-1 update-kubeconfig --name my-eks-cluster
 
 USERNAME=$(git config --global user.name)
 EMAIL=$(git config --global user.email)
+export CR_PAT="your github registry token"
+echo $CR_PAT | podman login ghcr.io -u USERNAME --password-stdin
 
 kubectl create secret docker-registry ghcr-secret \
   --docker-server=ghcr.io \
