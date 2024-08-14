@@ -7,7 +7,7 @@ export NEXT_PUBLIC_ZEROEX_API_KEY="your key"
 
 ## configure kubectl with aws cli
 
-aws eks --region <your-region> update-kubeconfig --name <your-cluster-name>
+aws eks --region [your-region] update-kubeconfig --name [your-cluster-name]
 
 aws eks --region eu-north-1 update-kubeconfig --name my-eks-cluster
 
