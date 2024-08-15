@@ -22,9 +22,13 @@ export CR_PAT="your github registry token"
 echo $CR_PAT | podman login ghcr.io -u USERNAME --password-stdin
 
 kubectl create secret docker-registry ghcr-secret \
+
   --docker-server=ghcr.io \
+
   --docker-username=$USERNAME \
+
   --docker-password=$CR_PAT \
+ 
   --docker-email=$EMAIL
 
 ## helm command
@@ -35,11 +39,24 @@ helm install swap-v2-next-app ./helm-charts
 
 ## ExternalDNS - godaddy.com example
 
+export GODADDY_API_KEY="your key"
+
+export GODADDY_API_SECRET="your secret"
+
+export DOMAIN_NAME="your domain name"
+
+export CLUSTER_NAME="your cluster name"
+
 helm repo add bitnami https://charts.bitnami.com/bitnami
 
 helm install external-dns bitnami/external-dns \
+
   --set provider=godaddy \
-  --set godaddy.apiKey="YOUR_GODADDY_API_KEY" \
-  --set godaddy.apiSecret="YOUR_GODADDY_API_SECRET" \
-  --set godaddy.domainFilters={yourdomain.com} \
-  --set txtOwnerId="YOUR_CLUSTER_NAME"
+  
+  --set godaddy.apiKey=$GODADDY_API_KEY \
+  
+  --set godaddy.apiSecret=$GODADDY_API_SECRET \
+  
+  --set godaddy.domainFilters=$DOMAIN_NAME \
+  
+  --set txtOwnerId=$CLUSTER_NAME
