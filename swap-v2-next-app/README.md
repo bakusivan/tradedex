@@ -1,8 +1,5 @@
 # 0x Swap API v2 Demo App (Next.js App Router)
 
-> [!NOTE]  
-> 0x API v2 is in open beta. Get your app ready with the [v2 migration guide](https://0x.org/beta-docs/next/0x-swap-api/upgrading/upgrading_to_v2) to ensure a smooth transition.
-
 An example ERC-20 swap application built on [Next.js App Router](https://nextjs.org/docs) with 0x Swap API v2 (Permit2) and [RainbowKit](https://www.rainbowkit.com/).
 
 Swap API enables your users to easily and conveniently trade tokens at the best prices directly in your app. With one simple integration, 0x unlocks thousands of tokens on the most popular blockchains and aggregated liquidity from 100+ AMMs and professional market makers.
@@ -86,14 +83,5 @@ open http://localhost:3000
 
 ## Supported Networks
 
-Swap API v2 is supported on the following chains. Access liquidity from the chain you want by using the corresponding chain URI when making a request:
+See [here](https://0x.org/docs/introduction/0x-cheat-sheet#-chain-support) for the latest list of supported networks.
 
-| Chain               | Chain ID |
-| ------------------- | -------- |
-| Ethereum (Mainnet)  | 1        |
-| Arbitrum            | 42161    |
-| Avalanche           | 43114    |
-| Base                | 84531    |
-| Binance Smart Chain | 56       |
-| Optimism            | 10       |
-| Polygon             | 137      |
